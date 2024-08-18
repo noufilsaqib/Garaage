@@ -10,13 +10,12 @@ import '../../../core/config/theme/app_colors.dart';
 
 /// A stateless widget that displays a list of selected images with an option to remove them.
 class SelectedImages extends StatelessWidget {
-  SelectedImages({
-    Key? key,
+  const SelectedImages({
+    super.key,
     required List<XFile?> pickedImages,
     required this.size,
     required this.removeImage,
-  })  : _pickedImages = pickedImages,
-        super(key: key);
+  })  : _pickedImages = pickedImages;
 
   /// Height of the container displaying the images.
   final double size;
@@ -44,10 +43,10 @@ class SelectedImages extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // Show a progress indicator while images are loading.
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           // Show an error message if there was a problem loading the images.
-          return Center(child: Text('Error loading images'));
+          return const Center(child: Text('Error loading images'));
         } else {
           final selectedImages = snapshot.data!;
           return SizedBox(

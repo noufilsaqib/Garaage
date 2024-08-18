@@ -98,7 +98,7 @@ class _CameraPageBodyState extends State<CameraPageBody> {
         _imageFile = image;
       });
     } catch (e) {
-      print(e);
+      // print(e);
     }
   }
 

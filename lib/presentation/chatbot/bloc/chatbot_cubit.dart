@@ -70,7 +70,6 @@ class ChatbotCubit extends Cubit<ChatbotState> {
           ...messages,
         ], aiTyping: false),
       );
-      print(e);
     }
   }
 
@@ -104,7 +103,6 @@ class ChatbotCubit extends Cubit<ChatbotState> {
       emit(
         ChatbotState(chatMessages: initialChatMessages, aiTyping: false),
       );
-      print(e);
     }
   }
 
@@ -169,6 +167,5 @@ class ChatbotCubit extends Cubit<ChatbotState> {
     );
     final newState = [message, ...state.chatMessages];
     emit(ChatbotState(chatMessages: newState, aiTyping: false));
-    print(l);
   }
 }

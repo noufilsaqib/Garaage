@@ -56,7 +56,6 @@ class _ChatbotBodyState extends State<ChatbotBody> {
       availableCameras().then((availableCameras) {
         cameras = availableCameras;
         camera = cameras.first;
-        print(cameras);
       });
     } on CameraException catch (e) {
       print(e);
@@ -134,7 +133,6 @@ class _ChatbotBodyState extends State<ChatbotBody> {
     ChatbotState chatBotState,
     Function(ChatMessage) sendMessage,
   ) {
-    print(imagesPicked.length);
     return DashChat(
       inputOptions: InputOptions(
         leading: [
@@ -168,7 +166,7 @@ class _ChatbotBodyState extends State<ChatbotBody> {
               ),
           ]),
           IconButton(
-            padding: EdgeInsets.all(0),
+            padding: const EdgeInsets.all(0),
             onPressed: () {
               // Opens the camera page to capture images.
               Navigator.push(
